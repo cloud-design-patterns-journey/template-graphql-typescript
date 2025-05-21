@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/nodejs-18-minimal:1 AS builder
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal:1 AS builder
 
 WORKDIR /opt/app-root/src
 
@@ -9,7 +9,7 @@ RUN mkdir -p /opt/app-root/src/node_modules && \
     npm ci && \
     npm run build
 
-FROM registry.access.redhat.com/ubi9/nodejs-18-minimal:1
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal:1
 
 LABEL name="ibm/template-node-typescript" \
       vendor="IBM" \
